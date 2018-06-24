@@ -6,7 +6,10 @@ addons:
     packages:
       - build-essential
       - libcap-dev
+      - libssl-dev
 install:
   - pip install -r requirements.txt
   - python setup.py install
-script: pybitmessage -t
+script:
+  - pybitmessage -t
+  - python setup.py test
