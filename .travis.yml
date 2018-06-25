@@ -1,12 +1,9 @@
 language: python
-python:
-  - "2.7"
 os: osx
 install:
   - pip install -r requirements.txt
   - python setup.py install
   - make -C src/workprover/fastsolver
-  - readelf -a src/workprover/fastsolver/libfastsolver.so
 script:
-  - pybitmessage -t
-  - python setup.py test
+  - src/workprover/test.py
+  - readelf -a src/workprover/fastsolver/libfastsolver.so
