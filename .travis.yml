@@ -10,4 +10,4 @@ install:
   - make -C src/workprover/fastsolver
 script:
   - src/workprover/test.py
-  - readelf -a src/workprover/fastsolver/libfastsolver.so
+  - nm src/workprover/fastsolver/libfastsolver.so
