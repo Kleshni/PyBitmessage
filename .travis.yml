@@ -3,6 +3,7 @@ os: osx
 osx_image: xcode9.4
 before_install:
   - brew install openssl
+  - brew link --force openssl
 install:
   - pip install -r requirements.txt
   - python setup.py install
