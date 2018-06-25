@@ -1,5 +1,5 @@
-CFLAGS += -std=gnu99 -Wall -Wextra -pedantic -O3 -fPIC -v
-LDFLAGS += -shared -Wl,-version-script=main.map -v
+CFLAGS += -std=gnu99 -Wall -Wextra -pedantic -O3 -fPIC -v -I/usr/local/opt/openssl/include
+LDFLAGS += -shared -Wl,-version-script=main.map -v -L/usr/local/opt/openssl/lib
 
 libfastsolver.so: main.map common.o pthread.o
 	$(CC) $(LDFLAGS) -o $@ common.o pthread.o -lpthread -lcrypto
